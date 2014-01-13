@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSString *postersThumbnail;
 @property (strong, nonatomic) NSString *synopsis;
 @property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSData *thumbnailData;
 
 -(id) initWithRottenTomatoesData: (NSDictionary*) data;
 

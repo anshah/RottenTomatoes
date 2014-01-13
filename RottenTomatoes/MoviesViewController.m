@@ -84,16 +84,22 @@
     // Configure the cell...
     UIImageView* uiImgView = (UIImageView*)[cell viewWithTag:0];
     NSURL *url = [NSURL URLWithString: rowMovie.postersThumbnail];
-    NSData *data = [NSData dataWithContentsOfURL:url];
+    /*NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc] initWithData:data];
     [uiImgView setImage:img];
-
-    /*NSURLRequest* request = [NSURLRequest requestWithURL:url];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        UIImage *img = [[UIImage alloc] initWithData:data];
+     */
+    
+    //if cached thumbnail, display it else load data asynchornously and request for refresh
+    if(rowMovie.thumbnailData){
+        UIImage *img = [[UIImage alloc] initWithData:rowMovie.thumbnailData];
         [uiImgView setImage:img];
-        [uiImgView setNeedsDisplay];
-    }];*/
+    }else{
+        NSURLRequest* request = [NSURLRequest requestWithURL:url];
+        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            rowMovie.thumbnailData = data;
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationNone];
+        }];
+    }
     
     UILabel* titleLabel = (UILabel*)[cell viewWithTag:1];
     titleLabel.text =rowMovie.title;
