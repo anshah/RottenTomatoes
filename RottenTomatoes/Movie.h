@@ -15,6 +15,11 @@
 @property (strong, nonatomic) NSString *synopsis;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSData *thumbnailData;
+@property (strong, nonatomic) NSString *originalImage;
+@property (strong, nonatomic) NSString *mpaaRating;
+@property (strong, nonatomic) NSString *runtime;
+@property (strong, nonatomic) NSString *theaterReleaseDate;
+@property (strong, nonatomic) NSString *audienceScore;
 
 -(id) initWithRottenTomatoesData: (NSDictionary*) data;
 

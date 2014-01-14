@@ -8,6 +8,7 @@
 
 #import "MoviesViewController.h"
 #import "Movie.h"
+#import "MovieViewController.h"
 
 @interface MoviesViewController ()
 
@@ -36,7 +37,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        //NSLog(@"%@", object);
+        NSLog(@"%@", object);
         
         NSMutableArray* mutableMovieList = [[ NSMutableArray alloc ] initWithCapacity: 5];
         for(id mv in [object valueForKey:@"movies"]){
@@ -154,14 +155,21 @@
 
 /*
 #pragma mark - Navigation
+ */
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
+    NSIndexPath* selectedIndex = [self.tableView indexPathForCell:sender];
+    Movie* selectedMovie = [self.moviesList objectAtIndex: selectedIndex.row];
+
+    MovieViewController *movieViewController = [segue destinationViewController];
+    movieViewController.title = selectedMovie.title;
+    movieViewController.movie = selectedMovie;
 }
 
- */
-
+ 
 @end

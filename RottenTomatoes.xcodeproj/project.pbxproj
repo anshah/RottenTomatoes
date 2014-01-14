@@ -22,6 +22,7 @@
 		6445FA2B1883E4150025A2FD /* RottenTomatoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6445FA2A1883E4150025A2FD /* RottenTomatoesTests.m */; };
 		6445FA391883E5490025A2FD /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6445FA381883E5490025A2FD /* MoviesViewController.m */; };
 		6445FA3C1883EC2B0025A2FD /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6445FA3B1883EC2B0025A2FD /* Movie.m */; };
+		6445FA3F18851C150025A2FD /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6445FA3E18851C150025A2FD /* MovieViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		6445FA381883E5490025A2FD /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		6445FA3A1883EC2B0025A2FD /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		6445FA3B1883EC2B0025A2FD /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		6445FA3D18851C150025A2FD /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		6445FA3E18851C150025A2FD /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				6445FA381883E5490025A2FD /* MoviesViewController.m */,
 				6445FA3A1883EC2B0025A2FD /* Movie.h */,
 				6445FA3B1883EC2B0025A2FD /* Movie.m */,
+				6445FA3D18851C150025A2FD /* MovieViewController.h */,
+				6445FA3E18851C150025A2FD /* MovieViewController.m */,
 			);
 			path = RottenTomatoes;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6445FA391883E5490025A2FD /* MoviesViewController.m in Sources */,
+				6445FA3F18851C150025A2FD /* MovieViewController.m in Sources */,
 				6445FA101883E4150025A2FD /* AppDelegate.m in Sources */,
 				6445FA3C1883EC2B0025A2FD /* Movie.m in Sources */,
 				6445FA0C1883E4150025A2FD /* main.m in Sources */,
